@@ -100,6 +100,7 @@ func (k *Kyverno) IsActivate() bool {
 	// } else {
 	// 	return false
 	// }
+	print("kyverno is active")
 	return true
 }
 

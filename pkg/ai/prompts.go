@@ -48,6 +48,12 @@ const (
 	  - Containers:
 	    - {list of container names}
 	`
+
+	kyverno_prompt = `Simplify the following Kubernetes error message delimited by triple dashes written in --- %s --- language; --- %s ---.
+	Provide the most possible solution as a kubectl command. Write the output in the following format:
+	Error: {Explain error here}
+	Solution: {kubectl command}
+	`
 )
 
 var PromptMap = map[string]string{
@@ -56,4 +62,5 @@ var PromptMap = map[string]string{
 	"ConfigAuditReport":             trivy_conf_prompt,
 	"PrometheusConfigValidate":      prom_conf_prompt,
 	"PrometheusConfigRelabelReport": prom_relabel_prompt,
+	"PolicyReport":                  kyverno_prompt,
 }
